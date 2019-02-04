@@ -1,0 +1,47 @@
+$bgColr:rgb(0, 120, 218);
+
+.cont {
+    width: 100%;
+    height: 100vh;
+    background: $bgColr;
+
+    .mouse {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 50px;
+        border: 1px solid #ffffff;
+        border-radius: 50px;
+
+        .icon {
+            position: absolute;
+            left: 10px;
+            color: #ffffff;
+            animation-name: raza;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            
+        }
+    }
+}
+
+@keyframes raza {
+    0% {
+        top: 2px;
+        left: 10px;
+    }
+
+    50% {
+        top: 26px;
+        opacity: 0.01;
+        // font-size: 3px;
+    }
+
+    100% {
+        top: 2px;
+        left: 10px;
+        // opacity: 0.8;
+    }
+}

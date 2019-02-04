@@ -1,0 +1,74 @@
+$txtColor: #fff;
+$brdColor: #fff;
+$padding:10px;
+
+.box{
+    width: 400px;
+    height: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000000;
+    overflow: hidden;
+
+    img{
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+    }
+
+    .caption{
+        position: absolute;
+        top: 30px;
+        bottom: 30px;
+        left: 30px;
+        right: 30px;
+        opacity: 0;
+        transition: 0.5s;
+
+        .txt{
+            text-align: center;
+            color: $txtColor;
+            font-family: Verdana, Geneva, sans-serif;
+            padding: $padding/2 $padding/2;
+        }
+    }
+    .caption:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-top: 1px dashed $brdColor;
+        border-bottom: 1px dashed $brdColor;
+        transition: 0.5s;
+        transform: scale(0,1);
+    }
+    .caption::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-left: 1px dashed $brdColor;
+        border-right: 1px dashed $brdColor;
+        transition: 0.5s;
+        transform: scale(1,0);
+    }
+}
+.box:hover .caption{
+    opacity: 1;
+}
+.box:hover img{
+    transform: rotate(-20deg) scale(1.5);
+    filter: brightness(30%);
+}
+.box:hover .caption:before{
+    transform: scale(1,1);
+}
+.box:hover .caption::after{
+    transform: scale(1,1);
+}
